@@ -19,7 +19,7 @@ RUN apk upgrade --no-cache && \
 		dcron \
 		logrotate \
 ; \
-	addgroup -g $GIT_GID git
+	addgroup -g $GIT_GID git; \
 	adduser -u $GIT_UID -G git -s /bin/sh -g 'GitLab' -D git; \
 	chown -R git:git /home/git; \
 	ash -ex /home/git/assets/build/install.sh
