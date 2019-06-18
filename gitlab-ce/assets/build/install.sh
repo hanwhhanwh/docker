@@ -5,20 +5,20 @@ ash -ex /home/git/assets/build/download_gitlab.sh
 
 # Prepare for install
 apk add --no-cache --virtual .builddev \
-  build-base \
-  ruby-dev \
-  go \
-  icu-dev \
-  zlib-dev \
-  libffi-dev \
-  cmake \
-  mariadb-dev \
-  linux-headers \
-  re2-dev \
-  libassuan-dev \
-  libgpg-error-dev \
-  gpgme-dev \
-  coreutils
+	build-base \
+	ruby-dev \
+	go \
+	icu-dev \
+	zlib-dev \
+	libffi-dev \
+	cmake \
+	mariadb-dev \
+	linux-headers \
+	re2-dev \
+	libassuan-dev \
+	libgpg-error-dev \
+	gpgme-dev \
+	coreutils
 
 sudo -u git -H echo "install: --no-document" > ~/.gemrc
 
