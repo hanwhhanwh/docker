@@ -10,4 +10,4 @@ sudo -u git -H bundle config --local build.gpgme --use-system-libraries
 
 sudo -u git -H echo "gem 'webrick'" >> Gemfile
 
-sudo -u git -H bundle install --system --without development test mysql aws kerberos -j$(nproc)
+sudo -u git -H bundle install --system --without development test postgres aws kerberos -j$(nproc)
