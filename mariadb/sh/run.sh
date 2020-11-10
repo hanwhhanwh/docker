@@ -21,6 +21,11 @@ MYSQLD_OPTS="${MYSQLD_OPTS} --skip-slave-start"
 # Listen to signals, most importantly CTRL+C
 MYSQLD_OPTS="${MYSQLD_OPTS} --debug-gdb"
 
+# mysql port option
+if [ -n "${MYSQL_PORT}" ]; then
+	MYSQLD_OPTS="${MYSQLD_OPTS} --port=${MYSQLD_OPTS}"
+fi
+
 # No previous installation
 if [ -z "$(ls -A /var/lib/mysql/ 2> /dev/null)" ]; then
 	[ -n "${SKIP_INNODB}" ] && touch /var/lib/mysql/noinnodb
