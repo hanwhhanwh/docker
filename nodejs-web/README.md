@@ -19,4 +19,16 @@ docker run -d --restart always --name homepage \
 기본적으로 start-web.sh 스크립트는 다음과 같은 형식으로 작성합니다.
 
 ```
+#!/bin/sh
+set -eo pipefail
+
+cd /app/public
+
+# Check if a user is mounting their own web source
+if [ -z "$(ls -A /app/public/node_modules/* 2> /dev/null)" ]; then
+	# This needs to be install node modules
+	npm install
+fi
+
+npm start
 ```
