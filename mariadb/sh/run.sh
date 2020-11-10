@@ -23,7 +23,7 @@ MYSQLD_OPTS="${MYSQLD_OPTS} --debug-gdb"
 
 # mysql port option
 if [ -n "${MYSQL_PORT}" ]; then
-	MYSQLD_OPTS="${MYSQLD_OPTS} --port=${MYSQLD_OPTS}"
+	MYSQLD_OPTS="${MYSQLD_OPTS} --port=${MYSQL_PORT}"
 fi
 
 # No previous installation
