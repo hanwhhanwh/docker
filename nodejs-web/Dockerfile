@@ -19,8 +19,7 @@ ENV WEB_ROOT /app/public
 COPY start-web.sh /start-web.sh
 
 RUN set -ex; \
-        mkdir -p ${WEB_ROOT} ; \
-        npm install pm2 -g
+        mkdir -p ${WEB_ROOT}
 
 
 WORKDIR "${WEB_ROOT}"
