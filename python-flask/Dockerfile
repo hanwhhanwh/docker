@@ -21,8 +21,8 @@ ENV FLASK_HOST="0.0.0.0" \
 	FLASK_ROOT="/app/public"
 
 
-COPY start-flask.sh /start-flask.sh \
-	requirements.txt /tmp/requirements.txt
+COPY start-flask.sh /start-flask.sh
+COPY requirements.txt /tmp/
 
 
 WORKDIR "${FLASK_ROOT}"
