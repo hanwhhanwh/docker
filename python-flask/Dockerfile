@@ -28,9 +28,9 @@ COPY requirements.txt /tmp/
 WORKDIR "${FLASK_ROOT}"
 
 
-RUN apk add --no-cache --virtual .build-deps gcc musl-dev \
-	pip install -r /tmp/requirements.txt \
-	apk del .build-deps gcc musl-dev \
+RUN apk add --no-cache --virtual .build-deps gcc build-base musl-dev alpine-sdk ; \
+	pip install -r /tmp/requirements.txt ; \
+	apk del .build-deps gcc build-base musl-dev alpine-sdk ; \
 	rm -f /var/cache/apk/* ; \
 	mkdir -p "${FLASK_ROOT}"
 
