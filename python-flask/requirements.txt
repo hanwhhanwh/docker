@@ -1,0 +1,5 @@
+Flask
+flask_restful
+mysql-connector-python
+qrcode
+sqlalchemy

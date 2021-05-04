@@ -21,19 +21,21 @@ ENV FLASK_HOST="0.0.0.0" \
 	FLASK_ROOT="/app/public"
 
 
-COPY start-flask.sh /start-flask.sh
+COPY start-flask.sh /start-flask.sh \
+	requirements.txt /tmp/requirements.txt
 
 
 WORKDIR "${FLASK_ROOT}"
 
 
-RUN pip install -r requirements.txt
+RUN apk add --no-cache --virtual .build-deps gcc musl-dev \
+	pip install -r /tmp/requirements.txt \
+	apk del .build-deps gcc musl-dev \
+	rm -f /var/cache/apk/* ; \
+	mkdir -p "${FLASK_ROOT}"
 
 
 EXPOSE 38080
-
-
-ENTRYPOINT ["python"]
 
 
 CMD ["start-flask.sh"]
