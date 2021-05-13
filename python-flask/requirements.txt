@@ -1,7 +1,9 @@
 Flask==1.1.2
-flask_restful
-Flask-Session
+Flask-RESTful==0.3.8
+Flask-Session==0.3.2
 image
-mysql-connector-python
-qrcode
-sqlalchemy
+mysql-connector-python==8.0.24
+PilImage
+Pillow==8.0.1
+qrcode==6.1
+SQLAlchemy==1.4.11
