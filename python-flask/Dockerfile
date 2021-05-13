@@ -30,7 +30,8 @@ WORKDIR "${FLASK_ROOT}"
 
 RUN apk add --no-cache --virtual .build-deps gcc build-base musl-dev alpine-sdk \
 		# Pillow dependencies
-		freetype libpng libjpeg freetype-dev fribidi-dev harfbuzz-dev jpeg-dev lcms2-dev openjpeg-dev tcl-dev tiff-dev tk-dev zlib-dev ; \
+		freetype-dev fribidi-dev harfbuzz-dev jpeg-dev lcms2-dev openjpeg-dev tcl-dev tiff-dev tk-dev zlib-dev ; \
+	apk add --no-cache freetype libpng libjpeg fribidi harfbuzz jpeg lcms2 openjpeg tcl tiff tk zlib ; \
 	pip install -r /tmp/requirements.txt ; \
 	apk del .build-deps gcc build-base musl-dev alpine-sdk \
 		freetype-dev fribidi-dev harfbuzz-dev jpeg-dev lcms2-dev openjpeg-dev tcl-dev tiff-dev tk-dev zlib-dev ; \
