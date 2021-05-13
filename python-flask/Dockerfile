@@ -41,5 +41,5 @@ RUN apk add --no-cache --virtual .build-deps gcc build-base musl-dev alpine-sdk 
 EXPOSE 38080
 
 
-CMD ["start-flask.sh"]
+CMD ["/start-flask.sh"]
 
