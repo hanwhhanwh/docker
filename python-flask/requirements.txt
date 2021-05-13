@@ -1,5 +1,5 @@
 Flask
-Flask-RESTful
+flask_restful
 Flask-Session
 image
 mysql-connector-python
