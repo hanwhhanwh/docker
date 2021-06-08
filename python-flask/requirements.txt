@@ -3,6 +3,6 @@ Flask-RESTful==0.3.8
 Flask-Session==0.3.2
 image==1.5.33
 mysql-connector-python==8.0.24
-Pillow==8.0.1
+Pillow==8.2.0
 qrcode==6.1
 SQLAlchemy==1.4.11
