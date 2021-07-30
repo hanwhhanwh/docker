@@ -1,5 +1,6 @@
-FROM node:14-alpine3.12
+FROM node:16-alpine3.14
 
+# Labels
 LABEL org.label-schema.build-date="$COMMIT_TIME" \
 	org.label-schema.name="nodejs-web" \
 	org.label-schema.description="NodeJS for HTTP Web service : Docker image running on Alpine Linux" \
@@ -12,9 +13,10 @@ LABEL org.label-schema.build-date="$COMMIT_TIME" \
 	org.label-schema.schema-version="1.0"
 
 
-
-#ENV NODE_ENV production
-ENV WEB_ROOT /app/public
+# Environments
+ENV NODE_ENV=production \
+	WEB_ROOT=/app/public \
+	SERVICE_PORT=3000
 
 COPY start-web.sh /start-web.sh
 
@@ -24,6 +26,6 @@ RUN set -ex; \
 
 WORKDIR "${WEB_ROOT}"
 
-EXPOSE 3000
+EXPOSE ${SERVICE_PORT}
 
 CMD ["/start-web.sh"]
