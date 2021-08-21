@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.13
 
 
 ARG COMMIT_TIME
@@ -13,7 +13,7 @@ LABEL org.label-schema.build-date="$COMMIT_TIME" \
 	org.label-schema.architecture="AMD64/x86_64" \
 	org.label-schema.vendor="hanwhhanwh" \
 	org.label-schema.maintainer="Wonhee Han <hbesthee@naver.com>" \
-	org.label-schema.version="10.4" \
+	org.label-schema.version="10.6" \
 	org.label-schema.schema-version="1.0"
 
 
@@ -46,7 +46,7 @@ RUN set -ex ; \
 	# 	| xargs -0 grep -lE '^(bind-address|log)' \
 	# 	| xargs -rt -0 sed -Ei 's/^(bind-address|log)/#&/'; \
 # don't reverse lookup hostnames, they are usually another container
-	echo -e "[mysqld]\nbind-address=0.0.0.0\nskip-host-cache\nskip-name-resolve" > /etc/my.cnf.d/docker.cnf ; \
+	echo -e "[mysqld]\nbind-address=0.0.0.0\nskip-host-cache\nskip-name-resolve\ndefault-time-zone='+9:00'" > /etc/my.cnf.d/docker.cnf ; \
 # create scripts folders
 	mkdir -p /docker-entrypoint-initdb.d ; \
 	mkdir -p /scripts/pre-exec.d ; \
@@ -71,7 +71,7 @@ EXPOSE 3306
 VOLUME ["/var/lib/mysql"]
 
 
-# USER mysql
+USER mysql
 # CMD ["mysqld"]
 
 
