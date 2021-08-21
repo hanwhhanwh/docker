@@ -1,4 +1,4 @@
-FROM alpine:3.13
+FROM alpine:3.14
 
 
 ARG COMMIT_TIME
@@ -13,7 +13,7 @@ LABEL org.label-schema.build-date="$COMMIT_TIME" \
 	org.label-schema.architecture="AMD64/x86_64" \
 	org.label-schema.vendor="hanwhhanwh" \
 	org.label-schema.maintainer="Wonhee Han <hbesthee@naver.com>" \
-	org.label-schema.version="10.6" \
+	org.label-schema.version="10.5" \
 	org.label-schema.schema-version="1.0"
 
 
