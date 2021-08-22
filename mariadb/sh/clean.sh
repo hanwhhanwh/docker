@@ -10,6 +10,7 @@ TO_KEEP=$(echo "
 	usr/bin/getent$
 	usr/bin/my_print_defaults$
 	usr/bin/mysql_install_db$
+	usr/bin/mariadb-install-db$
 	usr/share/mariadb/charsets
 	usr/share/mariadb/english
 	usr/share/mariadb/mysql_system_tables.sql$
