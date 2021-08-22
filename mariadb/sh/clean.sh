@@ -14,7 +14,7 @@ TO_KEEP=$(echo "
 	usr/bin/mysql$
 	usr/bin/mysqlcheck$
 	usr/bin/mysqldump$
-	usr/bin/mysqlupgrade$
+	usr/bin/mysql_upgrade$
 	usr/bin/mysql_install_db$
 	usr/bin/mysqld$
 	usr/bin/my_print_defaults$
