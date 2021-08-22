@@ -2,8 +2,6 @@
 set -euo pipefail
 
 TO_KEEP=$(echo "
-	usr/bin/mysql$
-	usr/bin/mysqld$
 	usr/bin/getconf$
 	usr/bin/getent$
 	usr/bin/mariadb$
@@ -13,8 +11,13 @@ TO_KEEP=$(echo "
 	usr/bin/mariadb-upgrade$
 	usr/bin/mariadbd$
 	usr/bin/mariadbd-safe$
-	usr/bin/my_print_defaults$
+	usr/bin/mysql$
+	usr/bin/mysqlcheck$
+	usr/bin/mysqldump$
+	usr/bin/mysqlupgrade$
 	usr/bin/mysql_install_db$
+	usr/bin/mysqld$
+	usr/bin/my_print_defaults$
 	usr/share/mariadb/charsets
 	usr/share/mariadb/english
 	usr/share/mariadb/mysql_system_tables.sql$
