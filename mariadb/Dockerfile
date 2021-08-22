@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:edge
 
 
 ARG COMMIT_TIME
@@ -13,7 +13,7 @@ LABEL org.label-schema.build-date="$COMMIT_TIME" \
 	org.label-schema.architecture="AMD64/x86_64" \
 	org.label-schema.vendor="hanwhhanwh" \
 	org.label-schema.maintainer="Wonhee Han <hbesthee@naver.com>" \
-	org.label-schema.version="10.5" \
+	org.label-schema.version="10.6" \
 	org.label-schema.schema-version="1.0"
 
 
@@ -28,7 +28,7 @@ RUN set -ex ; \
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 	addgroup -g 3306 mysql ; adduser -D -H -u 3306 -G mysql mysql ; \
 # install latest mariadb
-	apk add --no-cache mariadb ; \
+	apk add --no-cache mariadb mariadb-client mariadb-mytop mariadb-server-utils ; \
 # clean up
 	/bin/sh /clean.sh ; \
 	rm -f /var/cache/apk/* ; \

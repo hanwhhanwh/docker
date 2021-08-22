@@ -2,9 +2,6 @@
 set -euo pipefail
 
 TO_KEEP=$(echo "
-	usr/bin/mysql$
-	usr/bin/mysqld$
-	usr/bin/mariadb$
 	usr/bin/getconf$
 	usr/bin/getent$
 	usr/bin/my_print_defaults$
