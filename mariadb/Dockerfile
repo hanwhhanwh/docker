@@ -29,7 +29,7 @@ RUN set -ex ; \
 	addgroup -g 3306 mysql ; adduser -D -H -u 3306 -G mysql mysql ; \
 # install latest mariadb
 	apk add --no-cache mariadb mariadb-client mariadb-mytop mariadb-server-utils ; \
-# clean up
+# clean up ; clean.sh에 명시하여 유지할 파일을 제외하고 모두 제거
 	/bin/sh /clean.sh ; \
 	rm -f /var/cache/apk/* ; \
 	touch /usr/share/mariadb/mysql_test_db.sql ; \

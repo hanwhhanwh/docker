@@ -4,13 +4,17 @@ set -euo pipefail
 TO_KEEP=$(echo "
 	usr/bin/mysql$
 	usr/bin/mysqld$
-	usr/bin/mariadb$
-	usr/bin/mariadbd$
 	usr/bin/getconf$
 	usr/bin/getent$
+	usr/bin/mariadb$
+	usr/bin/mariadb-check$
+	usr/bin/mariadb-dump$
+	usr/bin/mariadb-install-db$
+	usr/bin/mariadb-upgrade$
+	usr/bin/mariadbd$
+	usr/bin/mariadbd-safe$
 	usr/bin/my_print_defaults$
 	usr/bin/mysql_install_db$
-	usr/bin/mariadb-install-db$
 	usr/share/mariadb/charsets
 	usr/share/mariadb/english
 	usr/share/mariadb/mysql_system_tables.sql$
