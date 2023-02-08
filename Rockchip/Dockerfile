@@ -16,7 +16,7 @@ LABEL org.label-schema.build-date="$COMMIT_TIME" \
 WORKDIR "/home"
 
 
-RUN	apt-get install -y libxslt1-dev zlib1g-dev libglib2.0 libsm6 libgl1-mesa-glx libprotobuf-dev gcc
+RUN	apt-get update && apt-get install -y libxslt1-dev zlib1g-dev libglib2.0 libsm6 libgl1-mesa-glx libprotobuf-dev gcc
 # RUN	apt-get install libgl1-mesa-glx libegl1-mesa libgl1-mesa-dev
 RUN rm -rf /var/lib/apt/lists/*
 RUN	python3 -m pip install --upgrade pip
