@@ -21,6 +21,8 @@ RUN	apt-get update && apt-get install -y libxslt1-dev zlib1g-dev libglib2.0 libs
 RUN rm -rf /var/lib/apt/lists/*
 RUN	python3 -m pip install --upgrade pip
 
+# first install numpy
+RUN pip install numpy==1.19.5
 
 ENV RKNN_TOOLKIT_FILE rknn_toolkit2-1.4.0_22dcfef4-cp38-cp38-linux_x86_64.whl
 
